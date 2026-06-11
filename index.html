@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项应用</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>我的待办事项</h1>
+            <p class="subtitle">保持组织，提高效率</p>
+        </header>
+
+        <main>
+            <!-- 输入部分 -->
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    class="todo-input" 
+                    placeholder="添加新任务..."
+                    autocomplete="off"
+                >
+                <button id="addBtn" class="add-btn">添加任务</button>
+            </div>
+
+            <!-- 过滤按钮 -->
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="active">进行中</button>
+                <button class="filter-btn" data-filter="completed">已完成</button>
+            </div>
+
+            <!-- 统计部分 -->
+            <div class="stats-section">
+                <span class="stat-item">总计: <span id="totalCount">0</span></span>
+                <span class="stat-item">进行中: <span id="activeCount">0</span></span>
+                <span class="stat-item">已完成: <span id="completedCount">0</span></span>
+            </div>
+
+            <!-- 待办列表 -->
+            <ul id="todoList" class="todo-list">
+                <li class="empty-state">
+                    <p>还没有任务。添加一个开始吧！</p>
+                </li>
+            </ul>
+
+            <!-- 清除按钮 -->
+            <div class="action-section">
+                <button id="clearCompleted" class="clear-btn">清除已完成</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>双击编辑 • 拖拽排序</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
